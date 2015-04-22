@@ -20,7 +20,7 @@ angular.module('app').controller('mainCtrl', function($scope) {
 
 angular.module('app').directive('userInfoCard', function () {
   return {
-    template: "Name: {{user.name}}<div ng-show='!!user.address'><br>Address:<br>{{user.address.street}}<br>{{user.address.city}}, {{user.address.state}}</div><br><div>Friends: <div ng-repeat='friend in user.friends'>{{friend}}</div</div>",
+    templateUrl: "userInfoCard.html",
     restrict: "E"
   }
 })
