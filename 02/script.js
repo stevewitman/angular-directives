@@ -23,4 +23,4 @@ angular.module('app').directive('userInfoCard', function () {
     templateUrl: "userInfoCard.html",
     restrict: "E"
   }
-})
+})  
