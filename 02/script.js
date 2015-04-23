@@ -1,5 +1,3 @@
-// Code goes here
-
 angular.module('app', []);
 
 angular.module('app').controller('mainCtrl', function($scope) {
@@ -18,9 +16,14 @@ angular.module('app').controller('mainCtrl', function($scope) {
   }
 });
 
-angular.module('app').directive('userInfoCard', function () {
+angular.module('app').directive('fcUserInfoCard', function () {
   return {
     templateUrl: "userInfoCard.html",
-    restrict: "E"
+    restrict: "E",
+    controller: function($scope) {
+      $scope.knightMe = function(user) {
+        user.rank = "knight";
+      }
+    }
   }
-})  
+}) 
