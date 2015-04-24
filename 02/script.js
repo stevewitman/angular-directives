@@ -26,7 +26,6 @@ angular.module('app').controller('mainCtrl', function($scope) {
         'Thomas'
       ]
   }
-  console.log($scope);
 });
 
 angular.module('app').directive('fcUserInfoCard', function () {
@@ -37,10 +36,13 @@ angular.module('app').directive('fcUserInfoCard', function () {
       user: '='
     },
     controller: function($scope) {
+      $scope.collapsed = false;
       $scope.knightMe = function(user) {
         user.rank = "knight";
       }
-          console.log($scope);
+      $scope.collapse = function() {
+        $scope.collapsed = !$scope.collapsed;
+      };
     }
   }
 
