@@ -33,17 +33,33 @@ angular.module('app').directive('fcUserInfoCard', function () {
     templateUrl: "userInfoCard.html",
     restrict: "E",
     scope: {
-      user: '=',
-      initialCollapsed: '@collapsed'
+      user: '='
     },
     controller: function($scope) {
-      $scope.collapsed = ($scope.initialCollapsed === 'true');
+      $scope.collapsed = false;
       $scope.knightMe = function(user) {
         user.rank = "knight";
       }
       $scope.collapse = function() {
         $scope.collapsed = !$scope.collapsed;
-      };
+      }
     }
   }
 });
+
+angular.module('app').directive('address', function() {
+  return {
+    restrict: 'E',
+    scope: true,
+    templateUrl: 'address.html',
+    controller: function($scope) {
+      $scope.collapsed = false;
+      $scope.collapseAddress = function() {
+        $scope.collapsed = true;
+      }
+      $scope.expandAddress = function() {
+        $scope.collapsed = false;
+      }
+    }
+  }
+})
